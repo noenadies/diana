@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+
+			#caja{
+-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+	background:-moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
+	background-color:#ededed;
+
+				width: 90%;
+				display: block;
+				height: 500px;
+				margin: auto;
+				position: relative;
+				top: 40px;
+			}
+
+					#caj1{
+
+
+				width: 90%;
+				display: block;
+				height: 200px;
+				margin: auto;
+
+				position: relative;
+				top: 100px;
+
+			}				#caj2{
+
+				width: 90%;
+				display: block;
+				height: 200px;
+				margin: auto;
+
+				position: relative;
+				top: 0px;
+
+			}
+				#btok{
+
+				width: 90%;
+				display: block;
+			
+				margin: auto;
+
+				position: relative;
+				top: -133px;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div id="caja">
+		<div id="caj1">	user: <input id="iduser" type="text" name="FirstName" value=""></div><br><br>
+<div id="caj2">pass: <input  id="idpass" type="text" name="LastName" value=""></div><br><br>
+	<button id="btok" onclick="autenticar()">ok</button>	</div>
+		<script>
+var viduser="";
+var vidpass="";
+			var user="1111";
+			var pass="1111";
+
+
+
+		function autenticar(){
+
+			viduser=document.getElementById("iduser").value;
+vidpass=document.getElementById("idpass").value;
+			if(user==viduser&&pass==vidpass){
+
+location.href="menu.html";
+			}
+
+		}
+			// Our Javascript will go here.
+		
+		</script>
+	</body>
+</html>

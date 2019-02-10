@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from examples.phaser.io/embed.php?f=animation/load+texture.js by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Dec 2017 02:07:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="UTF-8" />
+        <title>Phaser Example Runner</title>
+        <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
+    
+        <script src="phaser.2.6.2.min.js" type="text/javascript"></script>
+   
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                font-family: Arial;
+                font-size: 14px;
+                background-color: #AEB1AF;
+                color: #fff;
+            }
+            #idh1{
+
+                position: absolute;
+                top: 2%;
+                left: 25%;
+                color: #FFFFFF;
+background: #333333;
+text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+      z-index:12 ; 
+      
+           }
+        </style>
+    </head>
+    <body><h1 id="idh1">SOFTWARE DE MATEMATICAS PARA  DIANA</h1>
+<div id="phaser-example"></div>
+    	<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+        
+
+        <script type="text/javascript">
+
+        var IDE_HOOK = false;
+        var VERSION = '2.6.2';
+var w = window.innerWidth;
+var h = window.innerHeight;
+        
+var game = new Phaser.Game(w/1, h/1, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+function preload() {
+    game.load.image("btsuma", "btsuma.png");
+    game.load.image("btmult", "btmult.png");
+     game.load.image("btdecfra", "btdecfra.png");
+      game.load.image("btdescfac", "btdescfac.png");
+      game.load.image("btdivi", "back.png");
+
+ game.load.image("back", "back.png");
+
+  game.load.image("btdiv", "btdiv.png");
+
+   game.load.image("btmul", "btmul.png");
+
+      game.load.image("btsu", "btsu.png");
+
+        game.load.image("btdf", "btdf.png");
+
+  
+  game.load.image("btdfct", "btdfct.png");
+
+   game.load.image("btfr", "btfr.png");
+  game.load.image("btmin", "btmin.png");
+  game.load.image("btsim", "btsim.png");
+    
+
+}
+
+var sprite,btmult,btdecfrat,btdescfac,btdivi;
+var btdiv,btmul,btsu,btdf,btdfct,btfr,btmin,btsim;
+var espacio=50;
+
+
+var sy=0.7;
+var sx=1.3;
+function create() {
+
+
+
+
+
+
+
+
+
+
+
+  game.world.setBounds(0, 0, w, h);
+
+
+
+
+
+back = game.add.image(game.world.centerX,game.world.centerY, 'back');
+    back.scale.set(w*0.002,0.0012*h);
+    back.smoothed = false;
+    back.anchor.set(0.5);
+
+
+
+
+    btdiv = game.add.sprite(w/2, h/2-h/2*0.5, 'btdiv');
+btdiv.scale.set(sx,sy);
+btdiv.anchor.set(0.47,0.5);
+  
+
+
+btdiv.events.onInputDown.add(fbtdivi, this);
+btdiv.inputEnabled = true;
+btdiv.input.useHandCursor = true;
+
+
+    btmul = game.add.sprite(btdiv.x, btdiv.y+espacio, 'btmul');
+btmul.scale.set(sx,sy);
+btmul.anchor.set(0.47,0.5);
+  
+
+
+btmul.events.onInputDown.add(fbtmult, this);
+btmul.inputEnabled = true;
+btmul.input.useHandCursor = true;
+
+
+    btsu = game.add.sprite(btmul.x,btmul.y+espacio, 'btsu');
+btsu.scale.set(sx,sy);
+btsu.anchor.set(0.47,0.5);
+  
+
+
+btsu.events.onInputDown.add(fsuma, this);
+btsu.inputEnabled = true;
+btsu.input.useHandCursor = true;
+
+
+    btdf = game.add.sprite(btsu.x,btsu.y+espacio, 'btdf');
+btdf.scale.set(sx,sy);
+btdf.anchor.set(0.47,0.5);
+  
+
+
+btdf.events.onInputDown.add(fbtdecfra, this);
+btdf.inputEnabled = true;
+btdf.input.useHandCursor = true;
+
+
+
+
+   btdfct = game.add.sprite(btdf.x,btdf.y+espacio, 'btdfct');
+btdfct.scale.set(sx,sy);
+btdfct.anchor.set(0.47,0.5);
+  
+
+
+btdfct.events.onInputDown.add(fbtdescfac, this);
+btdfct.inputEnabled = true;
+btdfct.input.useHandCursor = true;
+
+
+
+   btfr = game.add.sprite(btdfct.x,btdfct.y+espacio, 'btfr');
+btfr.scale.set(sx,sy);
+btfr.anchor.set(0.47,0.5);
+  
+
+
+btfr.events.onInputDown.add(ffbtfr, this);
+btfr.inputEnabled = true;
+btfr.input.useHandCursor = true;
+
+
+   btmin = game.add.sprite(btfr.x,btfr.y+espacio, 'btmin');
+btmin.scale.set(sx,sy);
+btmin.anchor.set(0.47,0.5);
+  
+
+
+btmin.events.onInputDown.add(ffmin, this);
+btmin.inputEnabled = true;
+btmin.input.useHandCursor = true;
+
+   btsim = game.add.sprite(btmin.x,btmin.y+espacio, 'btsim');
+btsim.scale.set(sx,sy);
+btsim.anchor.set(0.47,0.5);
+  
+
+
+btsim.events.onInputDown.add(fbtsim, this);
+btsim.inputEnabled = true;
+btsim.input.useHandCursor = true;
+
+    sprite = game.add.sprite(game.world.centerX, game.world.centerY, 'btsuma');
+sprite.scale.set(0.4);
+  sprite.anchor.set(3.5);
+
+
+sprite.events.onInputDown.add(fsuma, this);
+sprite.inputEnabled = true;
+sprite.input.useHandCursor = true;
+
+
+    btmult = game.add.sprite(game.world.centerX, game.world.centerY, 'btmult');
+btmult.scale.set(0.4);
+  btmult.anchor.set(3.5);
+//btmult.angle=90
+
+btmult.events.onInputDown.add(fbtmult, this);
+btmult.inputEnabled = true;
+btmult.input.useHandCursor = true;
+
+
+    btdecfra= game.add.sprite(game.world.centerX, game.world.centerY, 'btdecfra');
+btdecfra.scale.set(0.4);
+  btdecfra.anchor.set(3.5);
+//btmult.angle=90
+
+btdecfra.events.onInputDown.add(fbtdecfra, this);
+btdecfra.inputEnabled = true;
+btdecfra.input.useHandCursor = true;
+
+
+
+
+
+
+
+    btdescfac= game.add.sprite(game.world.centerX, game.world.centerY, 'btdescfac');
+btdescfac.scale.set(0.4);
+  btdescfac.anchor.set(3.5);
+//btmult.angle=90
+
+btdescfac.events.onInputDown.add(fbtdescfac, this);
+btdescfac.inputEnabled = true;
+btdescfac.input.useHandCursor = true;
+
+
+
+
+    btdivi= game.add.sprite(game.world.centerX, game.world.centerY, 'btdivi');
+btdivi.scale.set(0.4);
+  btdivi.anchor.set(3.5);
+//btmult.angle=90
+
+btdivi.events.onInputDown.add(fbtdivi, this);
+btdivi.inputEnabled = true;
+btdivi.input.useHandCursor = true;
+
+
+}
+var ang=20;
+var  rsuma=0;
+var rmul=rsuma+ang;
+var rdecfra=rmul+ang;
+var rbtdescfac=rdecfra+ang;
+var rbtdivi=rbtdescfac+ang;
+function update() {
+
+    //  This will update the sprite.rotation so that it points to the currently active pointer
+    //  On a Desktop that is the mouse, on mobile the most recent finger press.
+    sprite.rotation = rsuma;
+    rsuma=rsuma+0.0005;
+
+    btmult.rotation =rmul;
+    rmul=rmul+0.0005;
+
+
+    btdecfra.rotation =rdecfra;
+    rdecfra=rdecfra+0.0005;
+
+   btdescfac.rotation =rbtdescfac;
+    rbtdescfac=rbtdescfac+0.0005;
+btdivi.rotation =rbtdivi;
+    rbtdivi=rbtdivi+0.0005;
+
+}
+
+function render() {
+
+   // game.debug.spriteInfo(sprite, 32, 32);
+
+}
+
+
+function fsuma(){
+
+location.href="suma.html";
+}
+
+
+function fbtmult(){
+location.href="multiplicacion.html";
+
+}
+   function fbtdecfra(){
+location.href="decimatofra.html";
+
+}
+  function fbtdescfac(){
+location.href="descompos.html";
+
+}
+
+
+function fbtdivi(){
+location.href="diviison.html";
+
+}
+
+
+function ffbtfr(){
+location.href="fracion.html";
+
+}
+
+
+function ffmin(){
+location.href="minimoymax.html";
+
+}
+
+function fbtsim(){
+location.href="smplificar.html";
+
+}
+
+
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+
+<!-- Mirrored from examples.phaser.io/embed.php?f=animation/load+texture.js by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Dec 2017 02:07:44 GMT -->
+</html>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+
+<!-- Mirrored from es.onlinemschool.com/math/assistance/number_theory/nod_nok/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 17:50:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width"/>
+<title>Online calculadora. MCD y MCM de dos números.</title>
+<meta name="description" content="Online calculadora. El cálculo del máximo común divisor (MCD) y mínimo común múltiplo (MCM) de dos números online."/>
+<meta name="keywords" content=" "/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="index.html" />
+<meta property="og:image" content="../../../../skins/OMSLogo-380.png"/>
+
+<link rel="stylesheet" href="../../../../skins/default/style_003_4.css" type="text/css"/>
+<style>
+@font-face {
+    font-family: 'Oms-1';
+    src:    url('http://es.onlinemschool.com/font/oms-1.eot?kibprl');
+    src:    url('http://es.onlinemschool.com/font/oms-1.eot?kibprl#iefix') format('embedded-opentype'),
+        url('http://es.onlinemschool.com/font/oms-1.ttf?kibprl') format('truetype'),
+        url('http://es.onlinemschool.com/font/oms-1.woff?kibprl') format('woff'),
+        url('http://es.onlinemschool.com/font/oms-1.svg?kibprl#Oms-1') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
+<script type="text/javascript" src="script//jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+(function() {
+var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+po.src = "script//oms_calc.js";
+var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+<link rel="alternate" hreflang="en" href="http://onlinemschool.com/math/assistance/number_theory/nod_nok/" /><link rel="alternate" hreflang="ru" href="https://ru.onlinemschool.com/math/assistance/number_theory/nod_nok/" /><link rel="alternate" hreflang="uk-ua" href="http://ua.onlinemschool.com/math/assistance/number_theory/nod_nok/" />
+
+<script type="text/javascript">
+	var languag="es";
+	var RResh="Solución:";
+	var oms_calc_error1 = '<font color=ff0000>¡Error! ¡No se puede dividir por cero!</font>';
+	var oms_calc_error2 = '<font color=ff0000>¡Error! ¡Operación inadmisible!</font>';
+</script>
+
+<style>
+@font-face{
+font-family: MJI;
+src: url("http://es.onlinemschool.com/font/mathjax_main-italic.eot");
+src: url("http://es.onlinemschool.com/font/mathjax_main-italic.eot?#iefix") format("embedded-opentype"),
+url("http://es.onlinemschool.com/font/mathjax_main-italic.woff") format("woff"),
+url("http://es.onlinemschool.com/font/mathjax_main-italic.ttf") format("truetype"),
+url("http://es.onlinemschool.com/font/mathjax_main-italic.svg#JournalRegular") format("svg");
+font-weight: normal;
+font-style: normal;}
+</style>
+<script type="text/javascript">
+	$(function() {
+		var offset0 = $("#right_bloc").offset()
+		$(window).scroll(function() {
+			var offset = $("#right_bloc").offset();
+			var offset1 = $("#msend").offset();
+			var topPadding = 5;
+			var td_h=offset1.top-offset.top;
+			var rbl_h=$("#right_bloc").css("height");
+			var lbl_h=$("#left_bloc").css("height");
+			rbl_h=rbl_h.substr(0, rbl_h.length-2);
+			lbl_h=lbl_h.substr(0, lbl_h.length-2);
+			if (($(window).scrollTop() > offset0.top)&&($(window).scrollTop() - offset.top + topPadding<td_h-rbl_h)) {
+				$("#right_bloc").css("marginTop", $(window).scrollTop() - offset0.top + topPadding);
+			}
+			else if($(window).scrollTop() <= offset0.top) {$("#right_bloc").css("marginTop", 0);};
+
+//				if (($(window).scrollTop() > offset0.top+650)&&($(window).scrollTop() - offset.top + topPadding-650<td_h-lbl_h)) {
+//					$("#left_bloc").css("marginTop", $(window).scrollTop() - 650 - offset0.top + topPadding);
+//				}
+//				else if($(window).scrollTop() <= offset0.top +650) {$("#left_bloc").css("marginTop", 0);};
+			if (($(window).scrollTop() > offset0.top)&&($(window).scrollTop() - offset.top + topPadding<td_h-lbl_h)) {
+				$("#left_bloc").css("marginTop", $(window).scrollTop() - offset0.top + topPadding);
+			}
+			else if($(window).scrollTop() <= offset0.top) {$("#left_bloc").css("marginTop", 0);};
+		});
+	});
+</script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id){
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "../../../../../connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=367238659972366&version=v2.9";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));
+</script>
+<div id="vk_api_transport"></div>
+
+<table class="table_main" cellspacing=2 cellpadding=2>
+<tbody>
+	<tr><td colspan="5" rowspan="1" align="left">
+		<table style="background-color:#F8F8F8;" width=100%><tbody><tr>
+			<td valign=center width=270px><a class=oms_a_image href="http://es.onlinemschool.com/" title="OnlineMSchool"><img src="../../../../skins/logo2.png" align="middle" alt="OnlineMSchool"></a></td>
+			<td style="border-left: 2px solid #dddddd;border-right: 2px solid #dddddd; padding-left: 15px; padding-right: 15px;"><div class=hh1>Aprendizaje de matemáticas online.</div><div class=hh2>Estudiar&nbsp;matemáticas&nbsp;con&nbsp;nosotros.&nbsp;<font color=FF0000>"¡Matemáticas&nbsp;–&nbsp;es&nbsp;fácil!"</font></div></td>
+			<td valign=center width=300px>
+<div class="window-main" style="text-align: center; ">
+<form action="http://es.onlinemschool.com/search/" id="cse-search-box">
+<div>
+<input type="hidden" name="cx" value="partner-pub-2666212829025044:9585825977" />
+<input type="hidden" name="cof" value="FORID:10" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" size="30" />
+<input type="submit" name="sa" value="Buscar" />
+</div>
+</form>
+<script type="text/javascript" src="http://www.google.es/coop/cse/brand?form=cse-search-box&amp;lang=es"></script>
+</div></td>
+		</tr></tbody></table>
+	</td></tr>
+	<tr><td colspan="5" rowspan="1" align="left">
+		<div class="mmainmenu"><script>function go(page){document.location.assign("http://"+page);}</script><script>function go1(page){_gaq.push(['_trackPageview','vsesdal']);go(page);}</script><div class="mlang"><select onchange="top.location.href = this.options[this.selectedIndex].value"><option value="http://de.onlinemschool.com/">Deutsch</option><option value="http://onlinemschool.com/math/assistance/number_theory/nod_nok/">English</option><option value="" selected="selected">Español</option><option value="http://fr.onlinemschool.com/">Français</option><option value="https://ru.onlinemschool.com/math/assistance/number_theory/nod_nok/">Русский</option><option value="http://ua.onlinemschool.com/math/assistance/number_theory/nod_nok/">Українська</option></select></div><table class=tablevmenu><tbody><tr><td class=td_vmenu onclick="go('es.onlinemschool.com')"><a href="http://es.onlinemschool.com/">Inicio</a></td><td class=td_vmenu_razdel></td><td class=td_vmenu onclick="go('es.onlinemschool.com/math/practice/index.html')"><a href="http://es.onlinemschool.com/math/practice/">Ejercicios</a></td><td class=td_vmenu_razdel></td><td class=td_vmenu_invers onclick="go('es.onlinemschool.com/math/assistance/index.html')"><a href="http://es.onlinemschool.com/math/assistance/">Calculadoras</a></td><td class=td_vmenu_razdel></td><td class=td_vmenu onclick="go('es.onlinemschool.com/math/library/index.html')"><a href="http://es.onlinemschool.com/math/library/">Guía</a></td><td class=td_vmenu_razdel></td><td class=td_vmenu onclick="go('es.onlinemschool.com/math/formula/index.html')"><a href="http://es.onlinemschool.com/math/formula/">Tablas y fórmulas</a></td><td class=td_vmenu_razdel></td><td class=td_vmenu onclick="go('es.onlinemschool.com/modules/feedback/index.html')"><a href="http://es.onlinemschool.com/modules/feedback/">Feed-back</a></td><td class=td_vmenu_razdel></td></tr></tbody></table></div>
+	</td></tr>
+	<tr>
+		<td class=td_main_left>
+		<div class="left_bloc" id="left_bloc">
+			<br><div id="Om_Left" style="display:block!important;visibility: visible!important;margin-top: 20px;">
+<script async src="../../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<ins class="adsbygoogle"
+	style="display:inline-block;width:160px;height:600px"
+	data-ad-client="ca-pub-2666212829025044"
+	data-ad-slot="3029967970"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>		</div>
+		</td>
+		<td class="td_main_border"></td>
+		<td class="td_main_center"><div><div width=100%>
+			
+<h1>Online calculadora. El cálculo del MCD y MCM de dos números online.</h1>
+<div class="mstyle" >
+<p><strong>El mínimo común múltiplo (MCM)</strong> de dos números enteros m y n es número natural mínimo que se divide por m y n. Se escribe de la manera siguiente: <b>MCM</b>(m, n)</p>
+<p><strong>El máximo común divisor (MCD)</strong> de dos o algunos números naturales es el mayor número por el que se divide cada uno de los números dados. Se escribe de la manera siguiente: <b>MCD</b>(m, n)</p>
+<p>Online calculadora le dejará calcular <strong>el máximo común divisor y el mínimo común múltiplo</strong> de dos números.
+<p style="text-align: center;"><strong>Introduzca dos números</strong>.</p>
+</div>
+<script type="text/javascript" src="script//aj.js"></script>
+<script type="text/javascript" src="script//afract.js"></script>
+
+<div align=center><div class=calcfr>
+	<TABLE cellSpacing=0 cellPadding=0 border=0><TBODY>
+		<TR>
+			<TD width=200 align=center>
+				<INPUT id=n1 tabIndex=1 maxLength=6 class=frdr>
+			</TD>
+			<TD width=200 align=center>
+				<INPUT id=n2 tabIndex=2 maxLength=6 class=frdr>
+			</TD>
+		</TR>
+		<tr><td colspan=2 align=center><INPUT onclick=nod_nok(); tabIndex=3 type=button value="Calcular" title="Calcular MCD y MCM"></td></tr>
+		<TR>
+			<TD width=200 align=center>
+				<p>Mínimo común múltiplo (MCM)</p>
+				<div id=d1></div>
+			</TD>
+			<TD width=200 align=center>
+				<p>Máximo común divisor (MCD)</p>
+				<div id=d2></div>
+			</TD>
+		</TR>
+	</TBODY></TABLE>
+</div></div>
+
+<br><br><div id="G_r1" style="display:block!important;visibility: visible!important;text-align:center;">
+<ins class="adsbygoogle"
+	style="display:inline-block;width:728px;height:90px"
+	data-ad-client="ca-pub-2666212829025044"
+	data-ad-slot="4506701179"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div><div class="link_blok"><b><a href="http://es.onlinemschool.com/math/assistance/number_theory/">Pruebe online calculadoras de la sección de la teoría de números</a></b><ul><LI><a href="http://es.onlinemschool.com/math/assistance/number_theory/calc/">Online calculadora. Sumas y resta con llevadas. Multiplicación y división larga</a></li><LI><a href="http://es.onlinemschool.com/math/assistance/number_theory/addition_subtraction/">Online calculadora. Sumas y resta con llevadas</a></li><LI><a href="http://es.onlinemschool.com/math/assistance/number_theory/multiplication/">Online calculadora. Multiplicación larga</a></li><LI><a href="http://es.onlinemschool.com/math/assistance/number_theory/division/">Online calculadora. División larga</a></li><li class=mm><a class=mm href="index.html">Online calculadora. MCD y MCM de dos números</a></li><LI><a href="http://es.onlinemschool.com/math/assistance/number_theory/multiplier/">Online calculadora. Descomposición de números en factores</a></li><b><a href="http://es.onlinemschool.com/math/assistance/">Mostrar todas las online calculadoras</a></b></ul></div><br><div class="link_blok"><b><a href="http://es.onlinemschool.com/math/practice/arithmetic/">Trate de resolver problemas de aritmética.</a></b><ul><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/addition/">Ejercicios. Adición de dos números naturales.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/subtraction/">Ejercicios. Resta de dos números naturales.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/add_subtr/">Ejercicios. Adición y sustracción de dos números naturales.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/multiplication_table/">Ejercicios. Aprendizaje de tabla de multiplicar.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/multiplication1/">Ejercicios. Multiplicación de números naturales de una cifra y números naturales de dos cifras.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/multiplication2/">Ejercicios. Multiplicación de números naturales de una cifra y de tres cifras. </a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/multiplication3/">Ejercicios. Multiplicación de dos números naturales de dos cifras.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/multiplication4/">Ejercicios. Multiplicación de números naturales de dos y tres cifras.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/multiplication5/">Ejercicios. Multiplicación de dos números naturales de tres cifras.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/multiplication/">Ejercicios. Multiplicación de dos números naturales.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/division/">Ejercicios. División de dos números naturales.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/calk/">Ejercicios. Cálculación con dos números naturales.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/residue/">Ejercicios. Resto de la división.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/gcd/">Ejercicios. Máximo común divisor.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/lcm/">Ejercicios. Mínimo común múltiplo.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/divisibility_rule/">Ejercicios. Criterios de divisibilidad.</a></li><LI><a href="http://es.onlinemschool.com/math/practice/arithmetic/arithmetic_mean/">Ejercicios. Media aritmética.</a></li><b><a href="http://es.onlinemschool.com/math/practice/">Mostrar todos los online ejercicios</a></b></ul></div><div class=share_buttons><a rel=nofollow href="https://www.facebook.com/sharer/sharer.php?u=http://es.onlinemschool.com/math/assistance/number_theory/nod_nok/" title="Share in Facebook" onclick="window.open(this.href, 'Share in Facebook', 'width=640,height=436,toolbar=0,status=0'); return false"><span class="icon-omsfacebook"></span></a>
+<a rel=nofollow href="https://twitter.com/intent/tweet?hashtags=onlinemschool&amp;url=http://es.onlinemschool.com/math/assistance/number_theory/nod_nok/&amp;text=Online+calculadora.+MCD+y+MCM+de+dos+n%C3%BAmeros." title="Share in Twitter" target="_blank"><span class="icon-omstwitter"></span></a>
+<a rel=nofollow href="https://plus.google.com/share?url=http://es.onlinemschool.com/math/assistance/number_theory/nod_nok/" title="Share in Google+" onclick="window.open(this.href, 'Share in Google+', 'width=640,height=436,toolbar=0,status=0'); return false"><span class="icon-omsgoogle-plus"></span></a>
+</div><a id="oms_comm"></a><p><i>Dejar comentario</i></p><div class=like_blok><div class="fb-comments" data-href="http://es.onlinemschool.com/math/assistance/number_theory/nod_nok/" data-numposts="5" data-colorscheme="light" data-width="100%"></div></div>		</div></div></td>
+		<td class="td_main_border"></td>
+		<td class="td_main_right" id="td_main_right">
+		<div class="right_bloc" id="right_bloc">
+			
+<div class="link_group">
+<table class=oms_calc>
+<tr>
+<td colspan=5>
+<div class=oms_calc1>
+<div id=oms_calc_res0></div>
+<div id=oms_calc_res>0</div>
+</div>
+</td>
+</tr>
+<!--
+<tr>
+<td><input class="OMS_calc_btn" type="Button" value="MC" onclick="Clear()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="MR" onclick="ClearEntry()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="MS" onclick="ClearEntry()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="M+" onclick="ClearEntry()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="M-" onclick="ClearEntry()" /></td>
+</tr>
+-->
+<tr>
+<td><input class="OMS_calc_btn" type="Button" value="←" onclick="oms_calc_clr_one()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="CE" onclick="oms_calc_clr()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="C" onclick="oms_calc_clr_all()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="±" onclick="oms_calc_pl_min()" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="√" onclick="oms_calc_sqrt()" /></td>
+</tr>
+<tr>
+<td><input class="OMS_calc_btn" type="Button" value="7" onclick="oms_calc_btn(7)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="8" onclick="oms_calc_btn(8)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="9" onclick="oms_calc_btn(9)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="/" onclick="oms_calc_function('http://es.onlinemschool.com/')" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="%" onclick="oms_calc_percent('%')" /></td>
+</tr>
+<tr>
+<td><input class="OMS_calc_btn" type="Button" value="4" onclick="oms_calc_btn(4)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="5" onclick="oms_calc_btn(5)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="6" onclick="oms_calc_btn(6)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="*" onclick="oms_calc_function('*')" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="1/x" onclick="oms_calc_invers()" /></td>
+</tr>
+<tr>
+<td><input class="OMS_calc_btn" type="Button" value="1" onclick="oms_calc_btn(1)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="2" onclick="oms_calc_btn(2)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="3" onclick="oms_calc_btn(3)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="-" onclick="oms_calc_function('-')" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="x^y" onclick="oms_calc_function('^')" /></td>
+</tr>
+<tr>
+<td colspan=2><input class="OMS_calc_btn" type="Button" value="0" onclick="oms_calc_btn(0)" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="," onclick="oms_calc_btn(',')" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="+" onclick="oms_calc_function('+')" /></td>
+<td><input class="OMS_calc_btn" type="Button" value="=" onclick="oms_calc_res()" /></td>
+</tr>
+</table></div><div class=oms_definition><div class=social_hesder>Follow OnlineMSchool on</div><div class=social_buttons><a href="https://www.facebook.com/onlinemschool" rel=nofollow target=_blank title="OnlineMSchool on Facebook"><span class="icon-omsfacebook"></span></a>
+<a href="https://twitter.com/onlinemschool_" rel=nofollow target=_blank title="OnlineMSchool on Twitter"><span class="icon-omstwitter"></span></a>
+<a href="https://plus.google.com/u/0/b/104393137654049357684/104393137654049357684" rel=nofollow target=_blank title="OnlineMSchool on Google+"><span class="icon-omsgoogle-plus"></span></a>
+</div>
+</div><div class="window-main" style="text-align: center; font-size:40px;">
+<div id="G_M" style="display:block!important;margin-top: 20px;">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2666212829025044"
+     data-ad-slot="4359197172"
+     data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>		</div>
+		</td>
+	</tr>
+	<tr class="msend" id="msend">
+		<td  colspan="5" rowspan="1"  align="left"><br>
+			<table width=100%><tbody><tr>
+				<td width=30% valign=top style="padding:0 20px 0 20px;"><br>&copy; 2011-2018 <b>Dovzhyk Mykhailo</b><br>Está prohibido copiar materiales</td>
+				<td width=1px style="background-color:White;padding:0 0 0 0;"></td>
+				<td width=20% valign=top style="padding:0 20px 0 20px;"><b>SERVICIOS</b><br><br>&nbsp;&nbsp;<a href="http://es.onlinemschool.com/math/assistance/">Online calculadoras</a><br>&nbsp;&nbsp;<a href="http://es.onlinemschool.com/math/practice/">Online ejercicios</a><br>&nbsp;&nbsp;<a href="http://es.onlinemschool.com/math/library/">Guía</a><br>&nbsp;&nbsp;<a href="http://es.onlinemschool.com/math/formula/">Tablas y fórmulas</a><br>&nbsp;&nbsp;<a href="http://percentcalc.com/l/es/">Calcular porcentaje</a><br></td>
+				<td width=1px style="background-color:White;padding:0 0 0 0;"></td>
+				<td width=20% valign=top style="padding:0 20px 0 20px;"><b>OnlineMSchool</b><br><br>&nbsp;&nbsp;<a href="http://es.onlinemschool.com/modules/feedback/">Feed-back</a><br>&nbsp;&nbsp;<a href="mailto:support@onlinemschool.com">support@onlinemschool.com</a><br></td>
+				<td width=20%></td>
+				<td width=></td>
+			</tr></tbody></table><br>
+		</td>
+	</tr>
+</tbody>
+</table>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-18112908-7']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><script>
+	window.onload=function(){
+		var rekl1=document.getElementById('Om_Left').innerHTML;
+		var rekl2=document.getElementById('G_M').innerHTML;
+		if((rekl2.length<350)&&(rekl1.length<350)){$.ajax({url: "http://es.onlinemschool.com/modules/ajax/vote1.php",success: function(data){}});}
+	};
+</script>
+</body>
+
+<!-- Mirrored from es.onlinemschool.com/math/assistance/number_theory/nod_nok/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 17:50:18 GMT -->
+</html>
